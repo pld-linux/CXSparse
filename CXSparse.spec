@@ -14,9 +14,9 @@ BuildRequires:	libtool >= 2:1.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-CXSparse is an extended version of CSparse - a small yet
-feature-rich sparse matrix package, with support for double
-or complex matrices, with int or long integers.
+CXSparse is an extended version of CSparse - a small yet feature-rich
+sparse matrix package, with support for double or complex matrices,
+with int or long integers.
 
 %package devel
 Summary:	Header files for CXSparse library
