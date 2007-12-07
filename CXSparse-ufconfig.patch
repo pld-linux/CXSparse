@@ -1,0 +1,39 @@
+diff -ur CXSparse/Demo/Makefile CXSparse-ufco/Demo/Makefile
+--- CXSparse/Demo/Makefile	2007-05-10 16:35:12.000000000 +0200
++++ CXSparse-ufco/Demo/Makefile	2007-12-07 17:06:31.000000000 +0100
+@@ -1,7 +1,7 @@
+ CC = cc
+ CFLAGS = -O
+ 
+-I = -I../Include -I../../UFconfig
++I = -I../Include
+ 
+ CS = ../Lib/libcxsparse.a
+ 
+Only in CXSparse-ufco/Demo: Makefile~
+diff -ur CXSparse/Include/cs.h CXSparse-ufco/Include/cs.h
+--- CXSparse/Include/cs.h	2007-10-29 19:50:00.000000000 +0100
++++ CXSparse-ufco/Include/cs.h	2007-12-07 17:07:15.000000000 +0100
+@@ -30,7 +30,7 @@
+ #define CXSPARSE
+ 
+ /* define UF_long */
+-#include "UFconfig.h"
++#include <UFconfig.h>
+ 
+ /* -------------------------------------------------------------------------- */
+ /* double/int version of CXSparse */
+Only in CXSparse-ufco/Include: cs.h~
+diff -ur CXSparse/Lib/Makefile CXSparse-ufco/Lib/Makefile
+--- CXSparse/Lib/Makefile	2007-05-05 23:03:41.000000000 +0200
++++ CXSparse-ufco/Lib/Makefile	2007-12-07 17:07:25.000000000 +0100
+@@ -1,7 +1,7 @@
+ # Modify the "-O" optimization option for best performance (-O3 on Linux):
+ CC = cc
+ CFLAGS = -O
+-I = -I../../UFconfig -I../Include
++I = -I../Include
+ 
+ AR = ar cr
+ RANLIB = ranlib
+Only in CXSparse-ufco/Lib: Makefile~
