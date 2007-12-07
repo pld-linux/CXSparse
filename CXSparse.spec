@@ -58,12 +58,13 @@ Statyczna biblioteka amd.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_includedir}/cxsparse
 
 %{__make} -C Lib install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	libdir=%{_libdir}
 
-install -D Include/cs.h $RPM_BUILD_ROOT%{_includedir}/cs.h
+install Include/*.h $RPM_BUILD_ROOT%{_includedir}/cxsparse
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -80,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libcxsparse.so
 %{_libdir}/libcxsparse.la
-%{_includedir}/cs.h
+%{_includedir}/cxsparse
 
 %files static
 %defattr(644,root,root,755)
