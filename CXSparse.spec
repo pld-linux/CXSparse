@@ -19,29 +19,29 @@ feature-rich sparse matrix package, with support for double
 or complex matrices, with int or long integers.
 
 %package devel
-Summary:	Header files for amd library
-Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki amd
+Summary:	Header files for CXSparse library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki CXSparse
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	UFconfig
 
 %description devel
-Header files for amd library.
+Header files for CXSparse library.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe biblioteki amd.
+Pliki nagłówkowe biblioteki CXSparse.
 
 %package static
-Summary:	Static amd library
-Summary(pl.UTF-8):	Statyczna biblioteka amd
+Summary:	Static CXSparse library
+Summary(pl.UTF-8):	Statyczna biblioteka CXSparse
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Static amd library.
+Static CXSparse library.
 
 %description static -l pl.UTF-8
-Statyczna biblioteka amd.
+Statyczna biblioteka CXSparse.
 
 %prep
 %setup -q -n %{name}
