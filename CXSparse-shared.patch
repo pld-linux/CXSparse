@@ -1,0 +1,146 @@
+diff -ur CXSparse/Demo/Makefile CXSparse-shared/Demo/Makefile
+--- CXSparse/Demo/Makefile	2007-12-07 17:08:37.000000000 +0100
++++ CXSparse-shared/Demo/Makefile	2007-12-07 17:14:42.000000000 +0100
+@@ -3,7 +3,7 @@
+ 
+ I = -I../Include
+ 
+-CS = ../Lib/libcxsparse.a
++CS = ../Lib/libcxsparse.la
+ 
+ all: $(CS) cs_demo1 cs_demo2 cs_demo3 \
+ 	cs_di_demo1 cs_di_demo2 cs_di_demo3 \
+@@ -91,67 +91,67 @@
+ 	( cd ../Lib ; $(MAKE) )
+ 
+ cs_demo1: $(CS) cs_demo1.c Makefile $(CS)
+-	$(CC) $(I) -o cs_demo1 cs_demo1.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_demo1 cs_demo1.c $(CS) -lm
+ 
+ cs_demo2: $(CS) cs_demo2.c cs_demo.c cs_demo.h Makefile $(CS)
+-	$(CC) $(I) -o cs_demo2 cs_demo2.c cs_demo.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_demo2 cs_demo2.c cs_demo.c $(CS) -lm
+ 
+ cs_demo3: $(CS) cs_demo3.c cs_demo.c cs_demo.h Makefile $(CS)
+-	$(CC) $(I) -o cs_demo3 cs_demo3.c cs_demo.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_demo3 cs_demo3.c cs_demo.c $(CS) -lm
+ 
+ 
+ 
+ 
+ cs_di_demo1: $(CS) cs_di_demo1.c Makefile $(CS)
+-	$(CC) $(I) -o cs_di_demo1 cs_di_demo1.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_di_demo1 cs_di_demo1.c $(CS) -lm
+ 
+ cs_di_demo2: $(CS) cs_di_demo2.c cs_di_demo.c cs_di_demo.h Makefile $(CS)
+-	$(CC) $(I) -o cs_di_demo2 cs_di_demo2.c cs_di_demo.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_di_demo2 cs_di_demo2.c cs_di_demo.c $(CS) -lm
+ 
+ cs_di_demo3: $(CS) cs_di_demo3.c cs_di_demo.c cs_di_demo.h Makefile $(CS)
+-	$(CC) $(I) -o cs_di_demo3 cs_di_demo3.c cs_di_demo.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_di_demo3 cs_di_demo3.c cs_di_demo.c $(CS) -lm
+ 
+ 
+ 
+ 
+ cs_ci_demo1: $(CS) cs_ci_demo1.c Makefile $(CS)
+-	$(CC) $(I) -o cs_ci_demo1 cs_ci_demo1.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_ci_demo1 cs_ci_demo1.c $(CS) -lm
+ 
+ cs_ci_demo2: $(CS) cs_ci_demo2.c cs_ci_demo.c cs_ci_demo.h Makefile $(CS)
+-	$(CC) $(I) -o cs_ci_demo2 cs_ci_demo2.c cs_ci_demo.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_ci_demo2 cs_ci_demo2.c cs_ci_demo.c $(CS) -lm
+ 
+ cs_ci_demo3: $(CS) cs_ci_demo3.c cs_ci_demo.c cs_ci_demo.h Makefile $(CS)
+-	$(CC) $(I) -o cs_ci_demo3 cs_ci_demo3.c cs_ci_demo.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_ci_demo3 cs_ci_demo3.c cs_ci_demo.c $(CS) -lm
+ 
+ 
+ 
+ cs_dl_demo1: $(CS) cs_dl_demo1.c Makefile $(CS)
+-	$(CC) $(I) -o cs_dl_demo1 cs_dl_demo1.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_dl_demo1 cs_dl_demo1.c $(CS) -lm
+ 
+ cs_dl_demo2: $(CS) cs_dl_demo2.c cs_dl_demo.c cs_dl_demo.h Makefile $(CS)
+-	$(CC) $(I) -o cs_dl_demo2 cs_dl_demo2.c cs_dl_demo.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_dl_demo2 cs_dl_demo2.c cs_dl_demo.c $(CS) -lm
+ 
+ cs_dl_demo3: $(CS) cs_dl_demo3.c cs_dl_demo.c cs_dl_demo.h Makefile $(CS)
+-	$(CC) $(I) -o cs_dl_demo3 cs_dl_demo3.c cs_dl_demo.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_dl_demo3 cs_dl_demo3.c cs_dl_demo.c $(CS) -lm
+ 
+ 
+ cs_cl_demo1: $(CS) cs_cl_demo1.c Makefile $(CS)
+-	$(CC) $(I) -o cs_cl_demo1 cs_cl_demo1.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_cl_demo1 cs_cl_demo1.c $(CS) -lm
+ 
+ cs_cl_demo2: $(CS) cs_cl_demo2.c cs_cl_demo.c cs_cl_demo.h Makefile $(CS)
+-	$(CC) $(I) -o cs_cl_demo2 cs_cl_demo2.c cs_cl_demo.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_cl_demo2 cs_cl_demo2.c cs_cl_demo.c $(CS) -lm
+ 
+ cs_cl_demo3: $(CS) cs_cl_demo3.c cs_cl_demo.c cs_cl_demo.h Makefile $(CS)
+-	$(CC) $(I) -o cs_cl_demo3 cs_cl_demo3.c cs_cl_demo.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_cl_demo3 cs_cl_demo3.c cs_cl_demo.c $(CS) -lm
+ 
+ 
+ 
+ 
+ cs_idemo: $(CS) cs_idemo.c Makefile $(CS)
+-	$(CC) $(I) -o cs_idemo cs_idemo.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) $(CFLAGS) -I../Include -o cs_idemo cs_idemo.c $(CS) -lm
+ 
+ cs_ldemo: $(CS) cs_ldemo.c Makefile $(CS)
+-	$(CC) $(I) -DCS_LONG -o cs_ldemo cs_ldemo.c $(CS) -lm
++	libtool --tag=CC --mode=link $(CC) -DCS_LONG $(CFLAGS) -I../Include -o cs_ldemo cs_ldemo.c $(CS) -lm
+ 
+ 
+ clean:
+Only in CXSparse-shared/Demo: Makefile~
+diff -ur CXSparse/Lib/Makefile CXSparse-shared/Lib/Makefile
+--- CXSparse/Lib/Makefile	2007-12-07 17:08:37.000000000 +0100
++++ CXSparse-shared/Lib/Makefile	2007-12-07 17:17:19.000000000 +0100
+@@ -6,7 +6,7 @@
+ AR = ar cr
+ RANLIB = ranlib
+ 
+-all: libcxsparse.a
++all: libcxsparse.la
+ 
+ CS_SOURCE = cs_add.c cs_amd.c cs_chol.c cs_cholsol.c cs_counts.c cs_cumsum.c \
+ 	cs_droptol.c cs_dropzeros.c cs_dupl.c cs_entry.c \
+@@ -71,23 +71,26 @@
+ $(CS): ../Include/cs.h Makefile
+ 
+ cs_convert.o: ../Source/cs_convert.c
+-	$(CC) $(CFLAGS) $(I) -c $< -o $@
++	libtool --tag=CC --mode=compile $(CC) $(CFLAGS) $(I) -c $< -o $@
+ 
+ %_di.o : ../Source/%.c
+-	$(CC) $(CFLAGS) $(I) -c $< -o $@
++	libtool --tag=CC --mode=compile $(CC) $(CFLAGS) $(I) -c $< -o $@
+ 
+ %_dl.o : ../Source/%.c
+-	$(CC) $(CFLAGS) $(I) -DCS_LONG -c $< -o $@
++	libtool --tag=CC --mode=compile $(CC) -DCS_LONG $(CFLAGS) $(I) -c $< -o $@
+ 
+ %_ci.o : ../Source/%.c
+-	$(CC) $(CFLAGS) $(I) -DCS_COMPLEX -c $< -o $@
++	libtool --tag=CC --mode=compile $(CC) -DCS_COMPLEX $(CFLAGS) $(I) -c $< -o $@
+ 
+ %_cl.o : ../Source/%.c
+-	$(CC) $(CFLAGS) $(I) -DCS_LONG -DCS_COMPLEX -c $< -o $@
++	libtool --tag=CC --mode=compile $(CC) -DCS_LONG -DCS_COMPLEX $(CFLAGS) $(I) -c $< -o $@
+ 
+-libcxsparse.a: $(CS)
+-	$(AR) libcxsparse.a $(CS)
+-	$(RANLIB) libcxsparse.a
++libcxsparse.la: $(CS)
++	libtool --tag=CC --mode=link $(CC) -o libcxsparse.la -rpath $(libdir) $^ -lm
++
++install: libcxsparse.la
++	install -d $(DESTDIR)$(libdir)
++	libtool --mode=install cp libcxsparse.la $(DESTDIR)$(libdir)/libcxsparse.la
+ 
+ clean:
+ 	rm -f *.o
+Only in CXSparse-shared/Lib: Makefile~
