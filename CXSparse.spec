@@ -1,4 +1,5 @@
 Summary:	CXSparse: extended version of a concise sparse matrix package
+Summary(pl.UTF-8):	CXSparse - rozszerzona wersja pakietu do macierzy rzadkich
 Name:		CXSparse
 Version:	0
 Release:	1
@@ -10,6 +11,7 @@ Patch0:		%{name}-ufconfig.patch
 Patch1:		%{name}-shared.patch
 URL:		http://www.cise.ufl.edu/research/sparse/CXSparse/
 BuildRequires:	UFconfig
+BuildRequires:	gcc-fortran
 BuildRequires:	libtool >= 2:1.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -17,6 +19,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 CXSparse is an extended version of CSparse - a small yet feature-rich
 sparse matrix package, with support for double or complex matrices,
 with int or long integers.
+
+%description -l pl.UTF-8
+CXSparse to rozszerzona wersja CSparse - małego, ale mającego wiele
+możliwości pakietu do macierzy rzadkich z obsługą macierzy typu double
+i zespolonych, z liczbami int i long.
 
 %package devel
 Summary:	Header files for CXSparse library
