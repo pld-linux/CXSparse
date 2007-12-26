@@ -1,9 +1,9 @@
 Summary:	CXSparse: extended version of a concise sparse matrix package
-Summary(pl.UTF-8):	CXSparse - rozszerzona wersja pakietu do macierzy rzadkich
+Summary(pl.UTF-8):	CXSparse - rozszerzona wersja zwięzłego pakietu do macierzy rzadkich
 Name:		CXSparse
 Version:	0
 Release:	1
-License:	LGPL
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.cise.ufl.edu/research/sparse/CXSparse/%{name}.tar.gz
 # Source0-md5:	b8061452b75014dee69e5c5fc33cfd25
@@ -11,7 +11,6 @@ Patch0:		%{name}-ufconfig.patch
 Patch1:		%{name}-shared.patch
 URL:		http://www.cise.ufl.edu/research/sparse/CXSparse/
 BuildRequires:	UFconfig
-BuildRequires:	gcc-fortran
 BuildRequires:	libtool >= 2:1.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -58,7 +57,6 @@ Statyczna biblioteka CXSparse.
 %build
 %{__make} \
 	CC="%{__cc}" \
-	F77="gfortran" \
 	CFLAGS="%{rpmcflags} -fPIC" \
 	LDFLAGS="%{rpmldflags}" \
 	libdir=%{_libdir}
@@ -81,8 +79,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.txt
+%doc README.txt Doc/{ChangeLog,License.txt}
 %attr(755,root,root) %{_libdir}/libcxsparse.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libcxsparse.so.0
 
 %files devel
 %defattr(644,root,root,755)
