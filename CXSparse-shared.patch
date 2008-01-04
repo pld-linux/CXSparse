@@ -95,7 +95,6 @@ diff -ur CXSparse/Demo/Makefile CXSparse-shared/Demo/Makefile
  
  
  clean:
-Only in CXSparse-shared/Demo: Makefile~
 diff -ur CXSparse/Lib/Makefile CXSparse-shared/Lib/Makefile
 --- CXSparse/Lib/Makefile	2007-12-07 17:08:37.000000000 +0100
 +++ CXSparse-shared/Lib/Makefile	2007-12-07 17:17:19.000000000 +0100
@@ -135,7 +134,7 @@ diff -ur CXSparse/Lib/Makefile CXSparse-shared/Lib/Makefile
 -	$(AR) libcxsparse.a $(CS)
 -	$(RANLIB) libcxsparse.a
 +libcxsparse.la: $(CS)
-+	libtool --tag=CC --mode=link $(CC) $(LDFLAGS) -o libcxsparse.la -rpath $(libdir) $^ -lm
++	libtool --tag=CC --mode=link $(CC) $(LDFLAGS) -o libcxsparse.la -rpath $(libdir) $(^:.o=.lo) -lm
 +
 +install: libcxsparse.la
 +	install -d $(DESTDIR)$(libdir)
@@ -143,4 +142,3 @@ diff -ur CXSparse/Lib/Makefile CXSparse-shared/Lib/Makefile
  
  clean:
  	rm -f *.o
-Only in CXSparse-shared/Lib: Makefile~
