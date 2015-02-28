@@ -2,7 +2,7 @@ Summary:	CXSparse: extended version of a concise sparse matrix package
 Summary(pl.UTF-8):	CXSparse - rozszerzona wersja zwięzłego pakietu do macierzy rzadkich
 Name:		CXSparse
 Version:	0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.cise.ufl.edu/research/sparse/CXSparse/%{name}.tar.gz
